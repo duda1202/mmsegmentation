@@ -7,29 +7,36 @@ from mmseg.datasets.basesegdataset import BaseSegDataset
 class Rellis3DDataset(BaseSegDataset):
     """Rellis-3D dataset.
 
-    This dataset uses `.jpg` for images and `.png` for segmentation maps.
+    This dataset uses `.tif` for images and `.png` for segmentation maps.
     """
 
     METAINFO = dict(
         classes=(
-            'Void', 'Grass', 'Tree', 'Pole', 'Dirt', 'Road', 'Water',
-            'Sky', 'Vehicle', 'Building', 'Fence', 'Bush', 'Rock', 'Concrete'
+            'void', 'dirt', 'grass', 'tree', 'pole', 'water', 'sky', 'vehicle',
+            'object', 'asphalt', 'building', 'log', 'person', 'fence',
+            'bush', 'concrete', 'barrier', 'puddle', 'mud', 'rubble'
         ),
         palette=[
-            [0, 0, 0],         # Void
-            [0, 255, 0],       # Grass
-            [100, 100, 100],   # Tree
-            [0, 100, 255],     # Pole
-            [100, 0, 100],     # Dirt
-            [255, 0, 255],     # Road
-            [0, 255, 255],     # Water
-            [255, 255, 0],     # Sky
-            [255, 0, 0],       # Vehicle
-            [100, 255, 100],   # Building
-            [100, 255, 255],   # Fence
-            [255, 100, 0],     # Bush
-            [0, 0, 255],       # Rock
-            [255, 255, 255]    # Concrete
+            [0, 0, 0],          # void
+            [108, 64, 20],      # dirt
+            [0, 102, 0],        # grass
+            [0, 255, 0],        # tree
+            [0, 153, 153],      # pole
+            [0, 128, 255],      # water
+            [0, 0, 255],        # sky
+            [255, 255, 0],      # vehicle
+            [255, 0, 127],      # object
+            [64, 64, 64],       # asphalt
+            [255, 0, 0],        # building
+            [102, 0, 0],        # log
+            [204, 153, 255],    # person
+            [102, 0, 204],      # fence
+            [255, 153, 204],    # bush
+            [170, 170, 170],    # concrete
+            [41, 121, 255],     # barrier
+            [134, 255, 239],    # puddle
+            [99, 66, 34],       # mud
+            [110, 22, 138]      # rubble
         ])
 
     def __init__(self,

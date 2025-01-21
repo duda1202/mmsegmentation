@@ -1,5 +1,5 @@
 dataset_type = 'GooseDataset'
-data_root = 'data/goose/'
+data_root = '/media/duda/t7_ssd/datasets_sem_seg/goose-dataset/goose_2d_train'
 
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53],  # Image normalization parameters
@@ -45,13 +45,8 @@ data = dict(
     val=dict(
         type=dataset_type,
         data_root=data_root,
-        img_dir='images/val',
-        ann_dir='annotations/val',
+        img_dir='images/validation',
+        ann_dir='annotations/validation',
         pipeline=test_pipeline),
-    test=dict(
-        type=dataset_type,
-        data_root=data_root,
-        img_dir='images/test',
-        ann_dir='annotations/test',
-        pipeline=test_pipeline),
+
 )
